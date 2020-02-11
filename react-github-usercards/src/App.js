@@ -61,8 +61,7 @@ class App extends React.Component {
         <img className="followerimg" src = {followme.avatar_url}/>
         <div className="followerInfo">
         <p>UserName: {followme.login}</p>
-        <p>If you would like to follow me here is my link!</p>
-        <a href={followme.html_url} target="_blank">{followme.html_url}</a>
+        <a href={followme.html_url} target="_blank"><button>Click to Follow!</button></a>
         </div>
         </div>
         )

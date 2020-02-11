@@ -7,8 +7,7 @@ const UserCard = (props) => {
       <img src = {props.avatar}/>
       <p>Name: {props.name}</p>
       <p>Bio: {props.bio}</p>
-      <p>If you would like to follow me here is my link!</p>
-  <a href={props.url} target="_blank"> {props.url}</a>
+  <a href={props.url} target="_blank"><button>Click to Follow!</button></a>
     </div>
   );
 }
