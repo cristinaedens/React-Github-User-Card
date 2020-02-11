@@ -18,6 +18,12 @@
     color: white;
 }
 
+.map-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
 .my-card {
     background: #3a1526;
     width: 30%;
@@ -46,7 +52,7 @@ img {
 .followers {
     background: #3a1526;
     width: 30%;
-    margin-left: 35%;
+    /* margin-left: 35%; */
     margin-top: 5%;
     padding-top: .5%;
     padding-bottom: 2%;
@@ -57,4 +63,9 @@ img {
 a {
     font-size: 2rem;
     color: rgb(0, 200, 250);
+}
+
+h3 {
+    font-size: 4rem;
+    color: rgb(221, 221, 221);
 }

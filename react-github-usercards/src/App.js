@@ -52,7 +52,8 @@ class App extends React.Component {
         />
         </div>
     </div>
-
+    <h3>My Followers</h3>
+      <div className="map-div">
       {this.state.followers_url.map(followme =>{
         return (
         <div className="followers" key={followme.id}>
@@ -66,6 +67,7 @@ class App extends React.Component {
         </div>
         )
       })}
+      </div>
     </div>
   );
 }
