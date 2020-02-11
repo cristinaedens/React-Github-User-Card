@@ -5,9 +5,10 @@ const UserCard = (props) => {
   return(
     <div>
       <img src = {props.avatar}/>
-      <p>{props.name}</p>
-      <p>{props.bio}</p>
-      <p>{props.login}</p>
+      <p>Name: {props.name}</p>
+      <p>Bio: {props.bio}</p>
+      <p>If you would like to follow me here is my link!</p>
+  <a href={props.url} target="_blank"> {props.url}</a>
     </div>
   );
 }

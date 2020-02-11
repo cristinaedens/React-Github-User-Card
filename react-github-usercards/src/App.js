@@ -11,7 +11,8 @@ class App extends React.Component {
         name: "",
         bio: "",
         login: "",
-        followers: []
+        followers: "",
+        followers_url: []
       } //this closes state
   } //this closes constructor
 
@@ -23,7 +24,9 @@ class App extends React.Component {
         avatar: response.data.avatar_url,
         name: response.data.name,
         bio: response.data.bio,
-        login: response.data.login
+        login: response.data.login,
+        followers: response.data.followers,
+        url: response.data.html_url
       }) //this closes the 1st setState
     }) //this closes the first axios call
 
@@ -31,7 +34,7 @@ class App extends React.Component {
     .then (response => {
       console.log(response)
       this.setState({
-        followers: response.data
+        followers_url: response.data
       }) //this closes the 2nd setState
     }) //this closes the 2nd axios call
   } //this closes componentDidMount
@@ -40,22 +43,25 @@ class App extends React.Component {
     <div className="App">
 
     <div className="App-header">
+      <div className="my-card">
         <UserCard
         avatar = {this.state.avatar}
         name = {this.state.name}
         bio = {this.state.bio}
+        url = {this.state.url}
         />
-        
+        </div>
     </div>
 
-      {this.state.followers.map(followme =>{
+      {this.state.followers_url.map(followme =>{
         return (
-        <div className="followers">
-        <img src = {followme.avatar_url}/>
+        <div className="followers" key={followme.id}>
+          
+        <img className="followerimg" src = {followme.avatar_url}/>
         <div className="followerInfo">
         <p>UserName: {followme.login}</p>
         <p>If you would like to follow me here is my link!</p>
-        <p>{followme.html_url}</p>
+        <a href={followme.html_url} target="_blank">{followme.html_url}</a>
         </div>
         </div>
         )
